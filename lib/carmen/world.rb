@@ -14,7 +14,7 @@ module Carmen
     end
 
     def subregion_class
-      Country
+      Continent
     end
 
     def path

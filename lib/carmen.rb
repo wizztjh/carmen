@@ -5,6 +5,7 @@ lib_path = File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift(lib_path)
 
 require 'carmen/country'
+require 'carmen/continent'
 require 'carmen/i18n'
 require 'carmen/version'
 
