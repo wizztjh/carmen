@@ -20,7 +20,8 @@ module Carmen
       Carmen.i18n_backend.translate(path('name'))
     end
 
-    def subregions
+    def subregions(only = nil )
+      @only = only
       @subregions ||= load_subregions
     end
 
@@ -74,8 +75,11 @@ module Carmen
     end
 
     def load_subregions_from_path(path, parent=nil)
-      regions = load_data_at_path(path).collect do |data|
-        subregion_class.new(data, parent)
+      regions = load_data_at_path(path).inject([]) do |memo, data|
+        if @only == nil || @only == data["type"]
+          memo.push subregion_class.new(data, parent)
+        end
+        memo
       end
       RegionCollection.new(regions)
     end

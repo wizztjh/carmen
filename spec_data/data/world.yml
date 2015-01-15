@@ -11,3 +11,5 @@
   alpha_3_code: EST
   numeric_code: "003"
   type: country
+- continent_code: NA
+  type: continent

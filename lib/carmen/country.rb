@@ -29,7 +29,7 @@ module Carmen
     end
 
     def self.all
-      World.instance.subregions
+      World.instance.subregions("country")
     end
 
     def self.query_collection
@@ -51,7 +51,7 @@ module Carmen
     end
 
     def subregion_directory
-      alpha_2_code.downcase
+      alpha_2_code.try :downcase
     end
 
   end
